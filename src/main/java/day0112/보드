@@ -1,0 +1,25 @@
+MVC 패턴 이용
+* main
+
+View로 사용자에게 보여주니깐 main에는 view만 import 하면 됨.
+생성자 만들 때 scanner 객체를 보내주면 의존성 주입.
+->
+BoardViewer boardViewer = new BoardViewer(scanner);
+UserViewer userViewer = new UserViewer(scanner);
+
+나머지 초기화는 setter 사용
+->
+userViewer.setBoardViewer(boardViewer);
+boardViewer.setUserViewer(userViewer);
+
+* view
+BoardViewer
+->
+BoardViewer(Scanner scanner)
+-> scanner
+UserViewer
+
+
+
+
+* controller
